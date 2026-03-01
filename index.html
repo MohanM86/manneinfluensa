@@ -34,21 +34,32 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 .ctn{max-width:1280px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem)}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 0;transition:all .5s var(--eo)}
-.nav.s{background:rgba(14,6,8,.92);backdrop-filter:blur(40px) saturate(1.5);-webkit-backdrop-filter:blur(40px) saturate(1.5);padding:.6rem 0;box-shadow:0 1px 0 rgba(255,71,87,.06)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.6rem 0;background:rgba(14,6,8,.7);backdrop-filter:blur(40px) saturate(1.8);border-bottom:1px solid rgba(255,71,87,.04);transition:all .5s var(--eo)}
+.nav.s{background:rgba(14,6,8,.92);border-color:rgba(255,71,87,.06)}
 .nav__i{display:flex;align-items:center;justify-content:space-between}
-.nav__l{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:-.02em}
-.nav__lm{width:34px;height:34px;background:linear-gradient(135deg,var(--fever),var(--r3));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 14px var(--fevg);position:relative}
-.nav__lm::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(255,71,87,.15);animation:pulse 2.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.7;transform:scale(1.12)}}
-.nav__lm svg{width:18px;height:18px}
-.nav__k{display:flex;list-style:none;gap:1.8rem;align-items:center}
-.nav__k a{color:var(--tw4);text-decoration:none;font-size:.78rem;font-weight:500;transition:color .3s}
-.nav__k a:hover{color:var(--fever)}
-.nav__h{display:none;background:0;border:0;cursor:pointer;width:30px;height:30px;position:relative}
-.nav__h span{position:absolute;left:3px;width:24px;height:1.5px;background:#fff;transition:all .3s var(--eo)}
-.nav__h span:nth-child(1){top:9px}.nav__h span:nth-child(2){top:15px}.nav__h span:nth-child(3){top:21px}
-.nav__h.o span:nth-child(1){top:15px;transform:rotate(45deg)}.nav__h.o span:nth-child(2){opacity:0}.nav__h.o span:nth-child(3){top:15px;transform:rotate(-45deg)}
+.nav__l{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff;font-weight:900;font-size:1.05rem;letter-spacing:-.02em}
+.nav__lm{width:38px;height:38px;background:linear-gradient(135deg,var(--fever),var(--r3));border-radius:11px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px var(--fevg);position:relative;overflow:hidden}
+.nav__lm::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.15),transparent);border-radius:11px}
+.nav__lm svg{width:17px;height:17px;position:relative;z-index:1}
+.nav__k{display:flex;list-style:none;gap:.15rem;align-items:center}
+.nav__k li{position:relative}
+.nav__k a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border-radius:10px;transition:all .35s var(--eo);position:relative}
+.nav__k a svg.ni{width:15px;height:15px;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;fill:none;opacity:.4;transition:all .35s}
+.nav__k a:hover{color:#fff;background:rgba(255,255,255,.04)}
+.nav__k a:hover svg.ni{opacity:1}
+.nav__k a::before{content:'';position:absolute;bottom:3px;left:50%;width:0;height:2px;border-radius:1px;transform:translateX(-50%);transition:all .35s var(--eo)}
+.nav__k a:hover::before{width:40%}
+.nav__k li:nth-child(1) a:hover{color:var(--fever)}.nav__k li:nth-child(1) a:hover svg.ni{stroke:var(--fever)}.nav__k li:nth-child(1) a::before{background:var(--fever)}
+.nav__k li:nth-child(2) a:hover{color:var(--r2)}.nav__k li:nth-child(2) a:hover svg.ni{stroke:var(--r2)}.nav__k li:nth-child(2) a::before{background:var(--r2)}
+.nav__k li:nth-child(3) a:hover{color:#f59e0b}.nav__k li:nth-child(3) a:hover svg.ni{stroke:#f59e0b}.nav__k li:nth-child(3) a::before{background:#f59e0b}
+.nav__k li:nth-child(4) a:hover{color:#34d399}.nav__k li:nth-child(4) a:hover svg.ni{stroke:#34d399}.nav__k li:nth-child(4) a::before{background:#34d399}
+.nav__k li:nth-child(5) a:hover{color:#a78bfa}.nav__k li:nth-child(5) a:hover svg.ni{stroke:#a78bfa}.nav__k li:nth-child(5) a::before{background:#a78bfa}
+.nav__k li:nth-child(6) a:hover{color:#38bdf8}.nav__k li:nth-child(6) a:hover svg.ni{stroke:#38bdf8}.nav__k li:nth-child(6) a::before{background:#38bdf8}
+.nav__h{display:none;background:0;border:0;cursor:pointer;width:36px;height:36px;border-radius:10px;position:relative;transition:background .3s}
+.nav__h:hover{background:rgba(255,255,255,.04)}
+.nav__h span{position:absolute;left:6px;width:24px;height:2px;background:#fff;border-radius:1px;transition:all .3s var(--eo)}
+.nav__h span:nth-child(1){top:10px}.nav__h span:nth-child(2){top:17px}.nav__h span:nth-child(3){top:24px}
+.nav__h.o span:nth-child(1){top:17px;transform:rotate(45deg)}.nav__h.o span:nth-child(2){opacity:0}.nav__h.o span:nth-child(3){top:17px;transform:rotate(-45deg)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center;background:var(--d)}
@@ -172,7 +183,8 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 .sk{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .ski{background:var(--w);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.04);text-align:center;transition:all .4s var(--eo)}
 .ski:hover{transform:translateY(-5px);box-shadow:0 15px 45px -12px rgba(14,6,8,.08)}
-.ski__em{font-size:2.5rem;margin-bottom:1rem;display:block}
+.ski__ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:.8rem;background:rgba(255,71,87,.06);border:1px solid rgba(255,71,87,.08)}.ski__ic svg{width:22px;height:22px;stroke:var(--fever)}
+.sk .ski:nth-child(1) .ski__ic svg{stroke:#ff4757}.sk .ski:nth-child(2) .ski__ic svg{stroke:#e88898}.sk .ski:nth-child(3) .ski__ic svg{stroke:#d46070}.sk .ski:nth-child(4) .ski__ic svg{stroke:#ff4757}.sk .ski:nth-child(5) .ski__ic svg{stroke:#b84d60}.sk .ski:nth-child(6) .ski__ic svg{stroke:#e88898}
 .ski__tt{font-family:var(--fh);font-weight:700;font-size:1rem;margin-bottom:.4rem}
 .ski__tx{font-size:.85rem;color:var(--tm);line-height:1.7;font-weight:300}
 
@@ -189,7 +201,7 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 .ft__itfirma-arrow{width:14px;height:14px;color:var(--fever);margin-left:.3rem;transition:transform .3s}.ft__itfirma:hover .ft__itfirma-arrow{transform:translateX(3px)}
 .ft__c h4{font-family:var(--fm);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tw4);font-weight:500;margin-bottom:1.2rem}
 .ft__c a{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.35);text-decoration:none;font-size:.88rem;margin-bottom:.7rem;font-weight:300;transition:all .3s var(--eo)}.ft__c a:hover{color:var(--fever);transform:translateX(4px)}
-.ft__c a svg{width:14px;height:14px;opacity:.3}.ft__c a:hover svg{opacity:.7}
+.ft__c å svg{width:14px;height:14px;opacity:.3}.ft__c a:hover svg{opacity:.7}
 .ft__mid{padding:2.5rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
 .ft__badge{display:flex;align-items:center;gap:.8rem;padding:.8rem 1.5rem;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}
 .ft__badge-ic{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center}
@@ -206,23 +218,68 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 .btt.vi{opacity:1;visibility:visible}.btt:hover{transform:translateY(-3px);background:var(--fever)}.btt svg{width:16px;height:16px}
 
 @media(max-width:1024px){.bwrap,.sk{grid-template-columns:repeat(2,1fr)}.hw-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav__k{display:none}.nav__h{display:block}.nav__k.op{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(14,6,8,.97);backdrop-filter:blur(30px);padding:2rem 1.5rem;gap:1.2rem}.intro{grid-template-columns:1fr}.bwrap,.fgrid,.hw-grid,.mangel-grid,.sk{grid-template-columns:1fr}.ft__top{grid-template-columns:1fr 1fr}.hero__btns{flex-direction:column;align-items:center}.bnb__row{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+.nav{padding:.5rem 0}.nav__k{display:none}.nav__h{display:block}
+.nav__k.op{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(14,6,8,.97);backdrop-filter:blur(40px);padding:1rem clamp(1.5rem,5vw,3rem);gap:.1rem;border-top:1px solid rgba(255,71,87,.06);border-bottom:1px solid rgba(255,71,87,.06)}
+.nav__k.op a{padding:.65rem .6rem;font-size:.82rem}
+.ctn{padding:0 1.2rem}
+.hero__c{padding:7rem 1rem 5rem}
+.hero__t{font-size:clamp(2.4rem,10vw,3.5rem)}
+.hero__p{font-size:.95rem}
+.hero__btns{flex-direction:column;align-items:stretch;gap:.6rem}
+.btn{justify-content:center;padding:.9rem 1.5rem}
+.sec{padding:clamp(3rem,7vw,5rem) 0}
+.sec__hd{font-size:clamp(1.5rem,6vw,2.2rem)}
+.sec__ds{font-size:.85rem}
+.intro{grid-template-columns:1fr;gap:2rem}
+.intro__vis{max-width:320px;margin:0 auto}
+.intro__vis svg{width:100%;height:auto}
+.bwrap{grid-template-columns:1fr;gap:.8rem}
+.fgrid{grid-template-columns:1fr;gap:.8rem}
+.hw-grid{grid-template-columns:1fr;gap:.8rem}
+.mangel-grid{grid-template-columns:1fr;gap:.8rem}
+.sk{grid-template-columns:1fr;gap:.8rem}
+.ft__top{grid-template-columns:1fr 1fr;gap:1.5rem}
+.bnb__row{grid-template-columns:1fr 1fr;gap:.6rem}
+.bn__n{font-size:clamp(1.8rem,8vw,2.5rem)}
+.stbar__i{flex-wrap:wrap;gap:1rem;justify-content:center}
+.stp{min-width:45%;text-align:center}
+.stp__d{display:none}
+.mi__q{font-size:.85rem}
+.fq{padding:1rem}
+.fq__q{font-size:.9rem}
+.fq__a{font-size:.82rem}
+}
+@media(max-width:420px){
+.hero__t{font-size:2.2rem}
+.hero__c{padding:6rem .5rem 4rem}
+.bnb__row{grid-template-columns:1fr}
+.ft__top{grid-template-columns:1fr}
+.nav__l{font-size:.9rem}
+}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav"><div class="ctn"><div class="nav__i">
-<a href="#" class="nav__l"><div class="nav__lm"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"><path d="M10 3v14M7 6l3-3 3 3"/><circle cx="10" cy="14" r="3" fill="rgba(255,255,255,.3)"/></svg></div>Manneinfluensa.no</a>
-<ul class="nav__k" id="nk"><li><a href="#hva-er">Hva er det</a></li><li><a href="#symptomer">Symptomer</a></li><li><a href="#forskning">Forskning</a></li><li><a href="#overleve">Overlevelsesguide</a></li><li><a href="#myter">Myter</a></li><li><a href="#faq">FAQ</a></li></ul>
+<a href="#" class="nav__l"><div class="nav__lm"><svg viewBox="0 0 20 20" fill="none" strøke="#fff" strøke-width="1.5" strøke-linecap="round"><path d="M10 3v14M7 6l3-3 3 3"/><circle cx="10" cy="14" r="3" fill="rgba(255,255,255,.3)"/></svg></div>Manneinfluensa.no</a>
+<ul class="nav__k" id="nk">
+<li><a href="#hva-er"><svg class="ni" viewBox="0 0 20 20" stroke="currentColor"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 2"/></svg>Hva er det</a></li>
+<li><a href="#symptomer"><svg class="ni" viewBox="0 0 20 20" stroke="currentColor"><path d="M10 3v14M10 3l-2 2M10 3l2 2"/><circle cx="10" cy="15" r="2.5"/></svg>Symptomer</a></li>
+<li><a href="#forskning"><svg class="ni" viewBox="0 0 20 20" stroke="currentColor"><path d="M7 3v8a3 3 0 006 0V3"/><path d="M5 11a5 5 0 0010 0"/><path d="M10 16v2"/></svg>Forskning</a></li>
+<li><a href="#overleve"><svg class="ni" viewBox="0 0 20 20" stroke="currentColor"><path d="M3 14V7a2 2 0 012-2h10a2 2 0 012 2v7"/><path d="M2 14h16v1.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 15.5V14z"/></svg>Overleve</a></li>
+<li><a href="#myter"><svg class="ni" viewBox="0 0 20 20" stroke="currentColor"><circle cx="10" cy="10" r="8"/><path d="M7.5 7.5a3 3 0 013-1.5c1.5 0 3 1 3 2.5s-1.5 2-3 2v1.5"/><circle cx="10" cy="14.5" r=".5" fill="currentColor" stroke="none"/></svg>Myter</a></li>
+<li><a href="#faq"><svg class="ni" viewBox="0 0 20 20" stroke="currentColor"><path d="M18 13a2 2 0 01-2 2H6l-4 3V5a2 2 0 012-2h12a2 2 0 012 2z"/></svg>FAQ</a></li>
+</ul>
 <button class="nav__h" id="hb" aria-label="Meny"><span></span><span></span><span></span></button>
 </div></div></nav>
 
 <section class="hero" id="topp"><div class="hero__bg"><div class="hero__mesh"></div><div class="hero__orb hero__orb--a"></div><div class="hero__orb hero__orb--b"></div></div>
 <div class="hero__c">
 <div class="hero__ey"><span class="hero__el"></span>Norges viktigste kunnskapsplattform<span class="hero__el"></span></div>
-<span class="hero__temp">&#x1F321; 37.2 &deg;C &mdash; Tilstanden er kritisk</span>
+<span class="hero__temp"><svg viewBox="0 0 16 16" fill="none" stroke="#ff4757" stroke-width="1.2" stroke-linecap="round" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:4px"><path d="M8 1v10M8 14a2 2 0 100-4 2 2 0 000 4z"/><path d="M6 7h4"/></svg>37.2 &deg;C &mdash; Tilstanden er kritisk</span>
 <h1 class="hero__t">Manne<span class="hero__ta">influensa</span></h1>
 <p class="hero__p">Den mest undervurderte tilstanden i moderne medisin. Evidensbasert kunnskap om symptomer, overlevelse og hvorfor det faktisk <em>er</em> verre enn hun tror.</p>
-<div class="hero__btns"><a href="#symptomer" class="btn btn--r">Sjekk symptomene <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a href="#overleve" class="btn btn--o">Overlevelsesguiden</a></div>
+<div class="hero__btns"><a href="#symptomer" class="btn btn--r">Sjekk symptomene <svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a href="#overleve" class="btn btn--o">Overlevelsesguiden</a></div>
 </div><div class="hero__scroll"><span>Scroll</span><div class="hero__sl"></div></div></section>
 
 <div class="stbar"><div class="ctn"><div class="stbar__i">
@@ -234,12 +291,12 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 
 <!-- SYMPTOMS -->
 <section class="sec sec--warm" id="symptomer"><div class="ctn">
-<div class="sec__top sec__top--c r"><div class="sec__lb">Klinisk bilde</div><h2 class="sec__hd">De klassiske <em>symptomene</em></h2><p class="sec__ds">Manneinfluensa presenterer seg med et karakteristisk symptombilde som skiller seg markant fra ordinaer influensa &mdash; i opplevd alvorlighetsgrad.</p></div>
+<div class="sec__top sec__top--c r"><div class="sec__lb">Klinisk bilde</div><h2 class="sec__hd">De klassiske <em>symptomene</em></h2><p class="sec__ds">Manneinfluenså presenterer seg med et karakteristisk symptombilde som skiller seg markant fra ordinær influenså &mdash; i opplevd alvorlighetsgrad.</p></div>
 <div class="hw-grid">
-<div class="hw r"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3v18M12 3l-3 3M12 3l3 3"/><circle cx="12" cy="18" r="3"/></svg></div><h3 class="hw__tt">Subjektiv feber</h3><p class="hw__tx">Temperaturen er 37.2&deg;C, men det &laquo;kjennes som 41&raquo;. Termometeret ma vaere defekt. Kan man bestille et bedre et pa nett?</p></div>
-<div class="hw r rd1"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 19L12 5l8 14"/><path d="M12 15v-4M12 19h.01"/></svg></div><h3 class="hw__tt">Total utmattelse</h3><p class="hw__tx">Kroppen nekter a samarbeide. Fjernkontrollen virker tyngre. Selv det a rope pa hjelp fra sofaen krever betydelig innsats.</p></div>
-<div class="hw r rd2"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2" opacity=".3"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg></div><h3 class="hw__tt">Eksistensiell krise</h3><p class="hw__tx">&laquo;Jeg tror dette er slutten.&raquo; Tanker om testamentet. Hvem skal ta seg av Netflix-kontoen? Hvem arver garasjen?</p></div>
-<div class="hw r rd3"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3 class="hw__tt">Verbale symptomer</h3><p class="hw__tx">Kontinuerlig oppdatering til alle i husholdningen om tilstandens utvikling. Sukk med 8-sekunders intervaller. Stonn ved stillingsskifte.</p></div>
+<div class="hw r"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M12 3v18M12 3l-3 3M12 3l3 3"/><circle cx="12" cy="18" r="3"/></svg></div><h3 class="hw__tt">Subjektiv feber</h3><p class="hw__tx">Temperaturen er 37.2&deg;C, men det &laquo;kjennes som 41&raquo;. Termometeret ma være defekt. Kan man bestille et bedre et på nett?</p></div>
+<div class="hw r rd1"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M4 19L12 5l8 14"/><path d="M12 15v-4M12 19h.01"/></svg></div><h3 class="hw__tt">Total utmattelse</h3><p class="hw__tx">Kroppen nekter å samarbeide. Fjernkontrollen virker tyngre. Selv det å rope på hjelp fra sofaen krever betydelig innsats.</p></div>
+<div class="hw r rd2"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2" opacity=".3"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg></div><h3 class="hw__tt">Eksistensiell krise</h3><p class="hw__tx">&laquo;Jeg tror dette er slutten.&raquo; Tanker om testamentet. Hvem skal ta seg av Netflix-kontoen? Hvem arver garasjen?</p></div>
+<div class="hw r rd3"><div class="hw__ic"><svg viewBox="0 0 24 24" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3 class="hw__tt">Verbale symptomer</h3><p class="hw__tx">Kontinuerlig oppdatering til alle i husholdningen om tilstandens utvikling. Sukk med 8-sekunders intervaller. Stonn ved stillingsskifte.</p></div>
 </div></div></section>
 
 <!-- WHAT IS IT -->
@@ -249,9 +306,9 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 <text x="190" y="24" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a6068" font-weight="600" letter-spacing=".2em" opacity=".6">DIAGNOSTISK OVERSIKT</text>
 <!-- Thermometer -->
 <g transform="translate(140,45)">
-<rect x="38" y="0" width="24" height="160" rx="12" fill="rgba(255,71,87,.04)" stroke="rgba(255,71,87,.15)" stroke-width="1"/>
+<rect x="38" y="0" width="24" height="160" rx="12" fill="rgba(255,71,87,.04)" strøke="rgba(255,71,87,.15)" strøke-width="1"/>
 <rect x="42" y="60" width="16" height="96" rx="8" fill="rgba(255,71,87,.15)"><animate attributeName="height" values="96;80;96" dur="3s" repeatCount="indefinite"/><animate attributeName="y" values="60;76;60" dur="3s" repeatCount="indefinite"/></rect>
-<circle cx="50" cy="175" r="22" fill="rgba(255,71,87,.06)" stroke="rgba(255,71,87,.2)" stroke-width="1"/>
+<circle cx="50" cy="175" r="22" fill="rgba(255,71,87,.06)" strøke="rgba(255,71,87,.2)" strøke-width="1"/>
 <circle cx="50" cy="175" r="14" fill="rgba(255,71,87,.2)"><animate attributeName="r" values="14;16;14" dur="2s" repeatCount="indefinite"/></circle>
 <text x="50" y="180" text-anchor="middle" font-family="Source Code Pro,monospace" font-size="9" fill="#ff4757">37.2</text>
 </g>
@@ -275,28 +332,28 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 <div class="intro__bd r rd2">
 <div class="sec__lb">Fenomenet</div>
 <h2 class="sec__hd">Hva er <em>manneinfluensa?</em></h2>
-<p>Manneinfluensa er den folkelige betegnelsen pa menns tilsynelatende overdrevne reaksjon pa mild forsjolelse eller influensa. Fenomenet er globalt anerkjent og har til og med fatt sin egen oppforing i Cambridge Dictionary.</p>
-<p>Men her er plottwisten: <strong>forskning tyder pa at det kan vaere reelt.</strong> Studier publisert i BMJ antyder at menn faktisk kan oppleve luftveisinfeksjoner mer intenst enn kvinner, muligens pa grunn av hormonelle forskjeller i immunforsvaret.</p>
-<p>Testosteron kan dempe immunresponsen, mens ostrogen styrker den. Resultatet? Menn kan objektivt sett ha en svakere forsvarsmekanisme mot forkjolelse og influensa.</p>
-<div class="cbox"><div class="cbox__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff4757" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
-<div><div class="cbox__lb">Vitenskapelig</div><div class="cbox__tx">Dr. Kyle Sue publiserte i 2017 en fagfellevurdert artikkel i BMJ med tittelen &laquo;The science behind 'man flu'&raquo;. Konklusjonen? Manneinfluensa kan vaere immunologisk underbygget. Studien ble publisert i juleutgaven &mdash; men dataene er reelle.</div></div></div>
+<p>Manneinfluenså er den folkelige betegnelsen på menns tilsynelatende overdrevne reaksjon på mild forkjølelse eller influensa. Fenomenet er globalt anerkjent og har til og med fatt sin egen oppforing i Cambridge Dictionary.</p>
+<p>Men her er plottwisten: <strong>forskning tyder på at det kan være reelt.</strong> Studier publisert i BMJ antyder at menn faktisk kan oppleve luftveisinfeksjoner mer intenst enn kvinner, muligens på grunn av hormonelle forskjeller i immunforsvaret.</p>
+<p>Testosteron kan dempe immunresponsen, mens ostrogen styrker den. Resultatet? Menn kan objektivt sett ha en svakere forsvarsmekanisme mot forkjølelse og influensa.</p>
+<div class="cbox"><div class="cbox__ic"><svg viewBox="0 0 24 24" fill="none" strøke="#ff4757" strøke-width="1.5" strøke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+<div><div class="cbox__lb">Vitenskapelig</div><div class="cbox__tx">Dr. Kyle Sue publiserte i 2017 en fagfellevurdert artikkel i BMJ med tittelen &laquo;The science behind 'man flu'&raquo;. Konklusjonen? Manneinfluenså kan være immunologisk underbygget. Studien ble publisert i juleutgaven &mdash; men dataene er reelle.</div></div></div>
 </div></div></div></section>
 
 <!-- FORSKNING -->
 <section class="sec sec--g" id="forskning"><div class="ctn">
-<div class="sec__top sec__top--c r"><div class="sec__lb">Forskning</div><h2 class="sec__hd">Vitenskapen bak <em>lidelsen</em></h2><p class="sec__ds">Overraskende nok finnes det seriose studier om fenomenet. Her er hva forskningen viser.</p></div>
+<div class="sec__top sec__top--c r"><div class="sec__lb">Forskning</div><h2 class="sec__hd">Vitenskåpen bak <em>lidelsen</em></h2><p class="sec__ds">Overraskende nok finnes det seriose studier om fenomenet. Her er hva forskningen viser.</p></div>
 <div class="bwrap">
-<div class="bc r"><div class="bc__ic bc__ic--a"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="13" cy="13" r="10"/><path d="M13 8v5l3 3"/></svg></div><h3 class="bc__tt">Testosteron demper immunitet</h3><p class="bc__tx">Studier fra Stanford (2013) viser at testosteron reduserer immunrespons pa influensavaksine. Menn med hoy testosteron hadde lavest antistoffrespons.</p><span class="bc__tg tg--s">Hormoner</span></div>
-<div class="bc r rd1"><div class="bc__ic bc__ic--b"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 3l8 17H5L13 3z"/><path d="M13 10v4M13 17h.01"/></svg></div><h3 class="bc__tt">Ostrogen styrker forsvaret</h3><p class="bc__tx">Ostrogen oker produksjonen av antiinflammasitoriske cytokiner. Kvinner har generelt sterkere immunrespons &mdash; men ogsa mer autoimmunitet.</p><span class="bc__tg tg--m">Immunologi</span></div>
-<div class="bc r rd2"><div class="bc__ic bc__ic--c"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="18" height="18" rx="3"/><path d="M4 13h18M13 4v18"/></svg></div><h3 class="bc__tt">BMJ-studien (2017)</h3><p class="bc__tx">Dr. Kyle Sue konkluderte med at menn kan ha svaekket immunrespons mot luftveisvirius. Publisert i BMJ &mdash; verdens mest prestisjefylte medisinske tidsskrift.</p><span class="bc__tg tg--e">Evidens</span></div>
-<div class="bc r rd1"><div class="bc__ic bc__ic--d"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 3v20M5 7l16 12M21 7L5 19"/></svg></div><h3 class="bc__tt">Hoyere dodelighet hos menn</h3><p class="bc__tx">Historisk sett har menn hoyere dodelighet av influensa enn kvinner i samme aldersgruppe. Observert i multiple pandemier. Ikke bare dramatikk.</p><span class="bc__tg tg--s">Epidemiologi</span></div>
-<div class="bc r rd2"><div class="bc__ic bc__ic--e"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="13" cy="13" r="10"/><path d="M8 13l3 3 5-5"/></svg></div><h3 class="bc__tt">Smertepersepsjon</h3><p class="bc__tx">Forskning pa smerteopplevelse viser individuelle forskjeller, men flere studier antyder at menn rapporterer hoyere ubehag ved inflammatoriske tilstander.</p><span class="bc__tg tg--m">Nevrologi</span></div>
-<div class="bc r rd3"><div class="bc__ic bc__ic--f"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 22s-8-5.5-8-11a5 5 0 0110 0 5 5 0 0110 0c0 5.5-8 11-8 11z"/></svg></div><h3 class="bc__tt">Sykdomsatferd</h3><p class="bc__tx">&laquo;Sickness behavior&raquo; er en evolusjonaer mekanisme. Kroppen tvinger deg til hvile for a prioritere immunforsvaret. Menn: eksperter pa dette.</p><span class="bc__tg tg--e">Evolusjon</span></div>
+<div class="bc r"><div class="bc__ic bc__ic--a"><svg viewBox="0 0 26 26" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><circle cx="13" cy="13" r="10"/><path d="M13 8v5l3 3"/></svg></div><h3 class="bc__tt">Testosteron demper immunitet</h3><p class="bc__tx">Studier fra Stanford (2013) viser at testosteron reduserer immunrespons på influensavaksine. Menn med hoy testosteron hadde lavest antistoffrespons.</p><span class="bc__tg tg--s">Hormoner</span></div>
+<div class="bc r rd1"><div class="bc__ic bc__ic--b"><svg viewBox="0 0 26 26" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M13 3l8 17H5L13 3z"/><path d="M13 10v4M13 17h.01"/></svg></div><h3 class="bc__tt">Ostrogen styrker forsvaret</h3><p class="bc__tx">Ostrogen øker produksjonen av antiinflammasitoriske cytokiner. Kvinner har generelt sterkere immunrespons &mdash; men også mer autoimmunitet.</p><span class="bc__tg tg--m">Immunologi</span></div>
+<div class="bc r rd2"><div class="bc__ic bc__ic--c"><svg viewBox="0 0 26 26" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><rect x="4" y="4" width="18" height="18" rx="3"/><path d="M4 13h18M13 4v18"/></svg></div><h3 class="bc__tt">BMJ-studien (2017)</h3><p class="bc__tx">Dr. Kyle Sue konkluderte med at menn kan ha svaekket immunrespons mot luftveisvirius. Publisert i BMJ &mdash; verdens mest prestisjefylte medisinske tidsskrift.</p><span class="bc__tg tg--e">Evidens</span></div>
+<div class="bc r rd1"><div class="bc__ic bc__ic--d"><svg viewBox="0 0 26 26" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M13 3v20M5 7l16 12M21 7L5 19"/></svg></div><h3 class="bc__tt">Høyere dødelighet hos menn</h3><p class="bc__tx">Historisk sett har menn høyere dødelighet av influenså enn kvinner i samme aldersgruppe. Observert i multiple pandemier. Ikke bare dramatikk.</p><span class="bc__tg tg--s">Epidemiologi</span></div>
+<div class="bc r rd2"><div class="bc__ic bc__ic--e"><svg viewBox="0 0 26 26" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><circle cx="13" cy="13" r="10"/><path d="M8 13l3 3 5-5"/></svg></div><h3 class="bc__tt">Smertepersepsjon</h3><p class="bc__tx">Forskning på smerteopplevelse viser individuelle forskjeller, men flere studier antyder at menn rapporterer høyere ubehag ved inflammatoriske tilstander.</p><span class="bc__tg tg--m">Nevrologi</span></div>
+<div class="bc r rd3"><div class="bc__ic bc__ic--f"><svg viewBox="0 0 26 26" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M13 22s-8-5.5-8-11a5 5 0 0110 0 5 5 0 0110 0c0 5.5-8 11-8 11z"/></svg></div><h3 class="bc__tt">Sykdomsatferd</h3><p class="bc__tx">&laquo;Sickness behavior&raquo; er en evolusjonær mekanisme. Kroppen tvinger deg til hvile for å prioritere immunforsvaret. Menn: eksperter på dette.</p><span class="bc__tg tg--e">Evolusjon</span></div>
 </div></div></section>
 
 <!-- BIG NUMBERS -->
 <div class="bnb"><div class="ctn"><div class="bnb__row r">
-<div class="bn"><div class="bn__n">62%</div><div class="bn__l">av menn mener partneren ikke tar det seriost nok</div></div>
+<div class="bn"><div class="bn__n">62%</div><div class="bn__l">av menn mener partneren ikke tar det seriøst nok</div></div>
 <div class="bn"><div class="bn__n">4.7</div><div class="bn__l">dager gjennomsnittlig sofatid ved manneinfluensa</div></div>
 <div class="bn"><div class="bn__n">37.2&deg;</div><div class="bn__l">gjennomsnittsfeber som &laquo;oppleves som 41&raquo;</div></div>
 <div class="bn"><div class="bn__n">3x</div><div class="bn__l">mer Google-soking etter symptomer enn kvinner</div></div>
@@ -306,22 +363,22 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 <section class="sec sec--s" id="overleve"><div class="ctn">
 <div class="sec__top sec__top--c r"><div class="sec__lb">Overlevelsesguide</div><h2 class="sec__hd">Slik overlever du <em>manneinfluensa</em></h2><p class="sec__ds">Evidensbaserte tiltak for optimal restitusjon. Folg protokollen noye.</p></div>
 <div class="sk">
-<div class="ski r"><span class="ski__em">&#x1F6CB;</span><h3 class="ski__tt">Etabler basecamp</h3><p class="ski__tx">Sofaen er kommandosentralen. Plasser fjernkontroll, mobil, lommetorkle og vann innen rekkevidde. Dynen er ikke valgfritt.</p></div>
-<div class="ski r rd1"><span class="ski__em">&#x1F375;</span><h3 class="ski__tt">Vaesketerapi</h3><p class="ski__tx">Varm te med honning. Honsesbuljong. Vann med sitron. Vitenskapelig bevist at varme drikker lindrer symptomer. Krev leveranse til sofa.</p></div>
-<div class="ski r rd2"><span class="ski__em">&#x1F4FA;</span><h3 class="ski__tt">Mental avledning</h3><p class="ski__tx">Netflix-maraton. Hele sesong 1-5 av noe. Hjernen trenger avledning fra lidelsen. Valg av serie er kritisk for utfallet.</p></div>
-<div class="ski r"><span class="ski__em">&#x1F48A;</span><h3 class="ski__tt">Medisinsk intervensjon</h3><p class="ski__tx">Paracetamol (1g x 4). Nesespray. Halstabletter. Les pakningsvedlegget to ganger &mdash; bivirkningene hores ut som dine symptomer.</p></div>
-<div class="ski r rd1"><span class="ski__em">&#x1F4F1;</span><h3 class="ski__tt">Symptomlogging</h3><p class="ski__tx">Oppdater alle i familien hvert 30. minutt. Send melding til kolleger. Legg ut pa sosiale medier. Dokumentasjon er viktig.</p></div>
-<div class="ski r rd2"><span class="ski__em">&#x2764;&#xFE0F;</span><h3 class="ski__tt">Empati-protokollen</h3><p class="ski__tx">Krev medfølelse. Minn partneren pa BMJ-studien. Vis denne nettsiden som bevis. Det er vitenskapelig underbygget.</p></div>
+<div class="ski r"><div class="ski__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 16V8a3 3 0 013-3h12a3 3 0 013 3v8"/><path d="M2 16h20v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2z"/><path d="M6 12V9h12v3"/></svg></div><h3 class="ski__tt">Etabler basecamp</h3><p class="ski__tx">Sofaen er kommandosentralen. Plasser fjernkontroll, mobil, lommetorkle og vann innen rekkevidde. Dynen er ikke valgfritt.</p></div>
+<div class="ski r rd1"><div class="ski__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg></div><h3 class="ski__tt">Vaesketerapi</h3><p class="ski__tx">Varm te med honning. Hønsesbuljong. Vann med sitron. Vitenskapelig bevist at varme drikker lindrer symptomer. Krev leveranse til sofa.</p></div>
+<div class="ski r rd2"><div class="ski__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3 class="ski__tt">Mental avledning</h3><p class="ski__tx">Netflix-maraton. Hele sesong 1-5 av noe. Hjernen trenger avledning fra lidelsen. Valg av serie er kritisk for utfallet.</p></div>
+<div class="ski r"><div class="ski__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8.5 2.5l13 13a4.24 4.24 0 010 6 4.24 4.24 0 01-6 0l-13-13a4.24 4.24 0 010-6 4.24 4.24 0 016 0z"/><path d="M5.5 8.5l10 10"/></svg></div><h3 class="ski__tt">Medisinsk intervensjon</h3><p class="ski__tx">Paracetamol (1g x 4). Nesespray. Halstabletter. Les pakningsvedlegget to ganger &mdash; bivirkningene hores ut som dine symptomer.</p></div>
+<div class="ski r rd1"><div class="ski__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 2h6M12 18h.01"/></svg></div><h3 class="ski__tt">Symptomlogging</h3><p class="ski__tx">Oppdater alle i familien hvert 30. minutt. Send melding til kolleger. Legg ut på sosiale medier. Dokumentasjon er viktig.</p></div>
+<div class="ski r rd2"><div class="ski__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 21s-8-5-8-11a5 5 0 0110 0 5 5 0 0110 0c0 6-8 11-8 11z"/></svg></div><h3 class="ski__tt">Empati-protokollen</h3><p class="ski__tx">Krev medfølelse. Minn partneren på BMJ-studien. Vis denne nettsiden som bevis. Det er vitenskapelig underbygget.</p></div>
 </div></div></section>
 
 <!-- STAGES -->
 <section class="sec" id="faser"><div class="ctn">
 <div class="sec__top sec__top--c r"><div class="sec__lb">Sykdomsforlop</div><h2 class="sec__hd">De fem fasene av <em>manneinfluensa</em></h2></div>
 <div class="mangel-grid">
-<div class="mc r"><div class="mc__sv sv--a">Fase 1</div><h3 class="mc__tt">Fornektelse (0-2 timer)</h3><p class="mc__tx">&laquo;Det er sikkert ingenting. Bare litt trett.&raquo; Nekter a innromme svakhet. Forsetter a jobbe. Ignorerer signalene fra kroppen.</p></div>
-<div class="mc r rd1"><div class="mc__sv sv--a">Fase 2</div><h3 class="mc__tt">Dramatisk innrommelse (2-6 timer)</h3><p class="mc__tx">&laquo;Jeg tror jeg er syk. Veldig syk.&raquo; Det forste hostet. Temperaturen males: 37.1. Det er begynnelsen pa slutten.</p></div>
+<div class="mc r"><div class="mc__sv sv--a">Fase 1</div><h3 class="mc__tt">Fornektelse (0-2 timer)</h3><p class="mc__tx">&laquo;Det er sikkert ingenting. Bare litt trett.&raquo; Nekter å innrømme svakhet. Forsetter å jobbe. Ignorerer signalene fra kroppen.</p></div>
+<div class="mc r rd1"><div class="mc__sv sv--a">Fase 2</div><h3 class="mc__tt">Dramatisk innrømmelse (2-6 timer)</h3><p class="mc__tx">&laquo;Jeg tror jeg er syk. Veldig syk.&raquo; Det første hostet. Temperaturen måles: 37.1. Det er begynnelsen på slutten.</p></div>
 <div class="mc r"><div class="mc__sv sv--b">Fase 3</div><h3 class="mc__tt">Total kapitulasjon (dag 1-3)</h3><p class="mc__tx">Sofa. Dyne. Fjernkontroll. Sukk. Stonn. &laquo;Kan du hente meg litt te?&raquo; Alle mater kansellert. Verden er over.</p></div>
-<div class="mc r rd1"><div class="mc__sv sv--b">Fase 4</div><h3 class="mc__tt">Vendepunktet (dag 3-4)</h3><p class="mc__tx">Appetitten kommer tilbake. Forst for pizza, sa for vanlig mat. &laquo;Kanskje jeg overlever dette likevel.&raquo;</p></div>
+<div class="mc r rd1"><div class="mc__sv sv--b">Fase 4</div><h3 class="mc__tt">Vendepunktet (dag 3-4)</h3><p class="mc__tx">Appetitten kommer tilbake. Forst for pizza, så for vanlig mat. &laquo;Kanskje jeg overlever dette likevel.&raquo;</p></div>
 </div>
 <div style="max-width:500px;margin:2rem auto 0;background:var(--w);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.04);text-align:center" class="r rd2"><div class="mc__sv sv--c" style="background:rgba(100,200,150,.1);color:#64c896">Fase 5</div><h3 class="mc__tt" style="margin-top:1rem">Heroisk restitusjon (dag 4-5)</h3><p class="mc__tx">&laquo;Jeg er tilbake. Sterkere enn noensinne.&raquo; Forteller historien om overlevelsen til alle som vil hore. Og alle som ikke vil hore.</p></div>
 </div></section>
@@ -330,54 +387,54 @@ body{font-family:var(--fb);color:var(--td);background:var(--sick);line-height:1.
 <section class="sec sec--s" id="myter"><div class="ctn">
 <div class="sec__top sec__top--c r"><div class="sec__lb">Fakta vs. fiksjon</div><h2 class="sec__hd">Myter om <em>manneinfluensa</em></h2></div>
 <div class="mlist">
-<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Menn overdriver alltid nar de er syke</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Nyansert</span><p class="mi__at">Forskning viser at testosteron kan dempe immunforsvaret, noe som betyr at menn kan oppleve symptomene sterkere. Det betyr ikke at de overdriver &mdash; opplevelsen kan vaere reell, selv om temperaturen er 37.2.</p></div></div></div>
-<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Kvinner taler sykdom bedre enn menn</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Delvis sant</span><p class="mi__at">Kvinner har generelt sterkere immunrespons takket vaere ostrogen. Men de er ogsa mer utsatt for autoimmune sykdommer. Sa immunsystemet er et tveegget sverd.</p></div></div></div>
-<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Honsesbuljong hjelper ikke egentlig</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Faktisk sant</span><p class="mi__at">Studier (University of Nebraska, 2000) viser at honsesbuljong har mild antiinflammatorisk effekt og kan lindre symptomer ved overe luftveisinfeksjon. Vitenskapelig validert komfortmat.</p></div></div></div>
-<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Du kan trene deg frisk</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Feil</span><p class="mi__at">Ved feber skal du IKKE trene. Hvile er det immunforsvaret trenger. &laquo;Halsregelen&raquo;: symptomer over halsen (snue, sare hals) = forsiktig aktivitet OK. Under halsen (hoste, feber, kroppsverk) = hvile.</p></div></div></div>
+<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Menn overdriver alltid når de er syke</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Nyansert</span><p class="mi__at">Forskning viser at testosteron kan dempe immunforsvaret, noe som betyr at menn kan oppleve symptomene sterkere. Det betyr ikke at de overdriver &mdash; opplevelsen kan være reell, selv om temperaturen er 37.2.</p></div></div></div>
+<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Kvinner tåler sykdom bedre enn menn</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Delvis sant</span><p class="mi__at">Kvinner har generelt sterkere immunrespons takket være ostrogen. Men de er også mer utsatt for autoimmune sykdommer. Så immunsystemet er et tveegget sverd.</p></div></div></div>
+<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Hønsesbuljong hjelper ikke egentlig</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Faktisk sant</span><p class="mi__at">Studier (University of Nebraska, 2000) viser at hønsesbuljong har mild antiinflammatorisk effekt og kan lindre symptomer ved øvre luftveisinfeksjon. Vitenskapelig validert komfortmat.</p></div></div></div>
+<div class="mi r"><button class="mi__tg" onclick="tM(this)"><span class="mi__bd">Myte</span><span class="mi__q">Du kan trene deg frisk</span><svg class="mi__ch" viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><polyline points="5 8 10 13 15 8"/></svg></button><div class="mi__an"><div class="mi__ai"><span class="mi__fb">Feil</span><p class="mi__at">Ved feber skal du IKKE trene. Hvile er det immunforsvaret trenger. &laquo;Halsregelen&raquo;: symptomer over halsen (snue, sare hals) = forsiktig aktivitet OK. Under halsen (hoste, feber, kroppsverk) = hvile.</p></div></div></div>
 </div></div></section>
 
 <!-- FAQ -->
 <section class="sec" id="faq"><div class="ctn">
-<div class="sec__top sec__top--c r"><div class="sec__lb">Ofte stilte sporsmal</div><h2 class="sec__hd">Sporsmal og <em>svar</em></h2></div>
+<div class="sec__top sec__top--c r"><div class="sec__lb">Ofte stilte spørsmål</div><h2 class="sec__hd">Spørsmål og <em>svar</em></h2></div>
 <div class="fgrid">
-<div class="fq r"><h3 class="fq__q">Er manneinfluensa en reell diagnose?</h3><p class="fq__a">Ikke en medisinsk diagnose, men et anerkjent fenomen. Cambridge Dictionary definerer det som &laquo;a cold or similar minor illness that a man treats as if it were very serious.&raquo; Forskning stotter at det kan ha biologisk grunnlag.</p></div>
-<div class="fq r rd1"><h3 class="fq__q">Bor man ga til legen?</h3><p class="fq__a">Ved vanlig forkjolelse: nei. Ved feber over 39&deg;C i mer enn 3 dager, pustevansker, brystsmerter eller forvirring: ja. Nar i tvil: ring fastlegen.</p></div>
-<div class="fq r"><h3 class="fq__q">Hjelper det a ta C-vitamin?</h3><p class="fq__a">Studier viser at C-vitamin kan forkorte forkjolelse med 8% hos voksne, men bare ved regelmessig inntak FØR man blir syk. Megadoser nar du allerede er syk har minimal effekt.</p></div>
-<div class="fq r rd1"><h3 class="fq__q">Kan man do av manneinfluensa?</h3><p class="fq__a">Av manneinfluensa (forkjolelse)? Ekstremt usannsynlig. Av reell influensa? Sjeldent for friske voksne, men influensa tar 290 000-650 000 liv globalt arlig. Vaksiner deg.</p></div>
-<div class="fq r"><h3 class="fq__q">Hvor lenge varer det?</h3><p class="fq__a">Forkjolelse: 7-10 dager. Influensa: 1-2 uker. Manneinfluensa-stadiet (total kapitulasjon i sofa): gjennomsnittlig 4.7 dager ifølge uoffisiell statistikk.</p></div>
-<div class="fq r rd1"><h3 class="fq__q">Hva er forskjellen pa forkjolelse og influensa?</h3><p class="fq__a">Forkjolelse: gradvis start, snue, sare hals, mild. Influensa: plutselig start, hoy feber, muskelssmerter, utmattelse, potensielt alvorlig. Begge fortjener sofa.</p></div>
-<div class="fq r"><h3 class="fq__q">Virker honsesbuljong virkelig?</h3><p class="fq__a">Ja, faktisk. Forskning viser mild antiinflammatorisk effekt. Pluss: varm vaeske, naering, og noen som bryr seg nok til a lage den. Placebo + naering = medisin.</p></div>
-<div class="fq r rd1"><h3 class="fq__q">Kan omega-3 eller D-vitamin hjelpe?</h3><p class="fq__a">D-vitamin stotter immunforsvaret og kan redusere risiko for luftveisinfeksjoner. Omega-3 har antiinflammatoriske egenskaper. Begge er god forebygging. Les mer pa <a href="https://omega-3.no" style="color:var(--r5)">Omega-3.no</a> og <a href="https://vitamind.no" style="color:var(--r5)">VitaminD.no</a>.</p></div>
+<div class="fq r"><h3 class="fq__q">Er manneinfluenså en reell diagnose?</h3><p class="fq__a">Ikke en medisinsk diagnose, men et anerkjent fenomen. Cambridge Dictionary definerer det som &laquo;a cold or similar minor illness that å man treats as if it were very serious.&raquo; Forskning stotter at det kan ha biologisk grunnlag.</p></div>
+<div class="fq r rd1"><h3 class="fq__q">Bor man gå til legen?</h3><p class="fq__a">Ved vanlig forkjølelse: nei. Ved feber over 39&deg;C i mer enn 3 dager, pustevansker, brystsmerter eller forvirring: ja. Når i tvil: ring fastlegen.</p></div>
+<div class="fq r"><h3 class="fq__q">Hjelper det å ta C-vitamin?</h3><p class="fq__a">Studier viser at C-vitamin kan forkorte forkjølelse med 8% hos voksne, men bare ved regelmessig inntak FØR man blir syk. Megadoser når du allerede er syk har minimal effekt.</p></div>
+<div class="fq r rd1"><h3 class="fq__q">Kan man do av manneinfluensa?</h3><p class="fq__a">Av manneinfluenså (forkjølelse)? Ekstremt usannsynlig. Av reell influensa? Sjeldent for friske voksne, men influenså tar 290 000-650 000 liv globalt årlig. Vaksiner deg.</p></div>
+<div class="fq r"><h3 class="fq__q">Hvor lenge varer det?</h3><p class="fq__a">Forkjølelse: 7-10 dager. Influensa: 1-2 uker. Manneinfluensa-stadiet (total kapitulasjon i sofa): gjennomsnittlig 4.7 dager ifølge uoffisiell statistikk.</p></div>
+<div class="fq r rd1"><h3 class="fq__q">Hva er forskjellen på forkjølelse og influensa?</h3><p class="fq__a">Forkjølelse: gradvis start, snue, sare hals, mild. Influensa: plutselig start, hoy feber, muskelssmerter, utmattelse, potensielt alvorlig. Begge fortjener sofa.</p></div>
+<div class="fq r"><h3 class="fq__q">Virker hønsesbuljong virkelig?</h3><p class="fq__a">Ja, faktisk. Forskning viser mild antiinflammatorisk effekt. Pluss: varm vaeske, næring, og noen som bryr seg nok til å lage den. Placebo + næring = medisin.</p></div>
+<div class="fq r rd1"><h3 class="fq__q">Kan omega-3 eller D-vitamin hjelpe?</h3><p class="fq__a">D-vitamin stotter immunforsvaret og kan redusere risiko for luftveisinfeksjoner. Omega-3 har antiinflammatoriske egenskaper. Begge er god forebygging. Les mer på <a href="https://omega-3.no" style="color:var(--r5)">Omega-3.no</a> og <a href="https://vitamind.no" style="color:var(--r5)">VitaminD.no</a>.</p></div>
 </div></div></section>
 
 <!-- CTA -->
 <section style="text-align:center;padding:clamp(5rem,10vw,9rem) 0;background:var(--d);position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 40% 40% at 50% 50%,rgba(255,71,87,.04),transparent)"></div><div class="ctn" style="position:relative"><div class="r">
 <h2 style="font-family:var(--fd);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.03em;color:#fff;margin-bottom:1rem">Du er ikke alene. Det <em>er</em> verre enn de tror.</h2>
-<p style="font-size:1.05rem;color:var(--tw6);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;font-weight:300">Manneinfluensa.no &mdash; fordi noen ma ta denne tilstanden seriost. Et prosjekt fra IT-FIRMA.</p>
-<a href="#topp" class="btn btn--r">Tilbake til toppen <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 13V3M4 7l4-4 4 4"/></svg></a>
+<p style="font-size:1.05rem;color:var(--tw6);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;font-weight:300">Manneinfluensa.no &mdash; fordi noen ma ta denne tilstanden seriøst. Et prosjekt fra IT-FIRMA.</p>
+<a href="#topp" class="btn btn--r">Tilbake til toppen <svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><path d="M8 13V3M4 7l4-4 4 4"/></svg></a>
 </div></div></section>
 
 <!-- FOOTER -->
 <footer class="ft"><div class="ft__glow"></div><div class="ctn">
 <div class="ft__top">
-<div class="ft__brand"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem"><div class="nav__lm"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"><path d="M10 3v14M7 6l3-3 3 3"/><circle cx="10" cy="14" r="3" fill="rgba(255,255,255,.3)"/></svg></div><span style="font-weight:700;font-size:1.1rem;color:#fff">Manneinfluensa.no</span></div>
-<p class="ft__bt">Norges viktigste kunnskapsbase om manneinfluensa. Evidensbasert, dypt seriost og overraskende vitenskapelig.</p>
-<a href="https://it-firma.no" target="_blank" rel="noopener" class="ft__itfirma"><div><div class="ft__itfirma-badge">Et prosjekt av</div><div class="ft__itfirma-name">IT-FIRMA</div></div><svg class="ft__itfirma-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
-<div class="ft__c"><h4>Kunnskap</h4><a href="/symptomer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Symptomer</a><a href="/forskning"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Forskning</a><a href="/immunforsvar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Immunforsvaret</a><a href="/forkjolelse-vs-influensa"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Forkjolelse vs. influensa</a></div>
-<div class="ft__c"><h4>Guider</h4><a href="/overleve"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Overlevelsesguiden</a><a href="/hjemmesykepleier"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Guide for partnere</a><a href="/statistikk"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Statistikk</a><a href="/historikk"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Historikk</a></div>
-<div class="ft__c"><h4>Ressurser</h4><a href="/myter"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Myter</a><a href="/om-oss"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Om oss</a><a href="/personvern"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Personvern</a><a href="https://it-firma.no" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>IT-FIRMA.no</a></div>
+<div class="ft__brand"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem"><div class="nav__lm"><svg viewBox="0 0 20 20" fill="none" strøke="#fff" strøke-width="1.5" strøke-linecap="round"><path d="M10 3v14M7 6l3-3 3 3"/><circle cx="10" cy="14" r="3" fill="rgba(255,255,255,.3)"/></svg></div><span style="font-weight:700;font-size:1.1rem;color:#fff">Manneinfluensa.no</span></div>
+<p class="ft__bt">Norges viktigste kunnskapsbase om manneinfluensa. Evidensbasert, dypt seriøst og overraskende vitenskapelig.</p>
+<a href="https://it-firma.no" target="_blank" rel="noopener" class="ft__itfirma"><div><div class="ft__itfirma-badge">Et prosjekt av</div><div class="ft__itfirma-name">IT-FIRMA</div></div><svg class="ft__itfirma-arrow" viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="2" strøke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+<div class="ft__c"><h4>Kunnskap</h4><a href="/symptomer"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Symptomer</a><a href="/forskning"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Forskning</a><a href="/immunforsvar"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Immunforsvaret</a><a href="/forkjølelse-vs-influensa"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Forkjølelse vs. influensa</a></div>
+<div class="ft__c"><h4>Guider</h4><a href="/overleve"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Overlevelsesguiden</a><a href="/hjemmesykepleier"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Guide for partnere</a><a href="/statistikk"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Statistikk</a><a href="/historikk"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Historikk</a></div>
+<div class="ft__c"><h4>Ressurser</h4><a href="/myter"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Myter</a><a href="/om-oss"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Om oss</a><a href="/personvern"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>Personvern</a><a href="https://it-firma.no" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>IT-FIRMA.no</a></div>
 </div>
 <div class="ft__mid">
-<div class="ft__badge"><div class="ft__badge-ic ft__badge-ic--a"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2l2.5 4H17l-3.5 3L15 14l-5-3-5 3 1.5-5L3 6h4.5z"/></svg></div><div class="ft__badge-tx"><strong>Evidensbasert</strong>Kvalitetssikret innhold</div></div>
-<div class="ft__badge"><div class="ft__badge-ic ft__badge-ic--b"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></svg></div><div class="ft__badge-tx"><strong>Dypt seriost</strong>Nesten helt uten ironi</div></div>
-<div class="ft__badge"><div class="ft__badge-ic ft__badge-ic--c"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 2v16"/><path d="M4 3h10l-2 4 2 4H4"/></svg></div><div class="ft__badge-tx"><strong>Norsk</strong>Laget i Norge av IT-FIRMA</div></div>
-<a href="https://omega-3.no" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:.8rem;padding:.8rem 1.5rem;border-radius:12px;background:rgba(61,160,227,.04);border:1px solid rgba(61,160,227,.08);text-decoration:none;transition:all .3s"><div class="ft__badge-ic" style="background:rgba(61,160,227,.08)"><svg viewBox="0 0 20 20" fill="none" stroke="#7ec8e3" stroke-width="1.5" stroke-linecap="round"><path d="M3 14C6 10 9 7 12 7c3 0 5 2 7 4"/></svg></div><div class="ft__badge-tx"><strong style="color:#7ec8e3">Omega-3.no</strong>Var sosterside</div></a>
-<a href="https://vitamind.no" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:.8rem;padding:.8rem 1.5rem;border-radius:12px;background:rgba(245,166,35,.04);border:1px solid rgba(245,166,35,.08);text-decoration:none;transition:all .3s"><div class="ft__badge-ic" style="background:rgba(245,166,35,.08)"><svg viewBox="0 0 20 20" fill="none" stroke="#f5a623" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="4"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2"/></svg></div><div class="ft__badge-tx"><strong style="color:#f5a623">VitaminD.no</strong>Var sosterside</div></a>
+<div class="ft__badge"><div class="ft__badge-ic ft__badge-ic--a"><svg viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M10 2l2.5 4H17l-3.5 3L15 14l-5-3-5 3 1.5-5L3 6h4.5z"/></svg></div><div class="ft__badge-tx"><strong>Evidensbasert</strong>Kvalitetssikret innhold</div></div>
+<div class="ft__badge"><div class="ft__badge-ic ft__badge-ic--b"><svg viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></svg></div><div class="ft__badge-tx"><strong>Dypt seriøst</strong>Nesten helt uten ironi</div></div>
+<div class="ft__badge"><div class="ft__badge-ic ft__badge-ic--c"><svg viewBox="0 0 20 20" fill="none" strøke="currentColor" strøke-width="1.5" strøke-linecap="round"><path d="M4 2v16"/><path d="M4 3h10l-2 4 2 4H4"/></svg></div><div class="ft__badge-tx"><strong>Norsk</strong>Laget i Norge av IT-FIRMA</div></div>
+<a href="https://omega-3.no" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:.8rem;padding:.8rem 1.5rem;border-radius:12px;background:rgba(61,160,227,.04);border:1px solid rgba(61,160,227,.08);text-decoration:none;transition:all .3s"><div class="ft__badge-ic" style="background:rgba(61,160,227,.08)"><svg viewBox="0 0 20 20" fill="none" strøke="#7ec8e3" strøke-width="1.5" strøke-linecap="round"><path d="M3 14C6 10 9 7 12 7c3 0 5 2 7 4"/></svg></div><div class="ft__badge-tx"><strong style="color:#7ec8e3">Omega-3.no</strong>Var søsterside</div></a>
+<a href="https://vitamind.no" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:.8rem;padding:.8rem 1.5rem;border-radius:12px;background:rgba(245,166,35,.04);border:1px solid rgba(245,166,35,.08);text-decoration:none;transition:all .3s"><div class="ft__badge-ic" style="background:rgba(245,166,35,.08)"><svg viewBox="0 0 20 20" fill="none" strøke="#f5a623" strøke-width="1.5" strøke-linecap="round"><circle cx="10" cy="10" r="4"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2"/></svg></div><div class="ft__badge-tx"><strong style="color:#f5a623">VitaminD.no</strong>Var søsterside</div></a>
 </div>
-<div class="ft__bot"><div class="ft__cp">&copy; 2026 Manneinfluensa.no &mdash; Utviklet av <a href="https://it-firma.no" target="_blank" rel="noopener">IT-FIRMA</a></div><div class="ft__dis">Innholdet er humoristisk og informativt. Erstatter ikke medisinsk radgivning. Konsulter lege ved reell sykdom.</div></div>
+<div class="ft__bot"><div class="ft__cp">&copy; 2026 Manneinfluensa.no &mdash; Utviklet av <a href="https://it-firma.no" target="_blank" rel="noopener">IT-FIRMA</a></div><div class="ft__dis">Innholdet er humoristisk og informativt. Erstatter ikke medisinsk rådgivning. Konsulter lege ved reell sykdom.</div></div>
 </div></footer>
 
-<button class="btt" id="btt" aria-label="Til toppen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
+<button class="btt" id="btt" aria-label="Til toppen"><svg viewBox="0 0 16 16" fill="none" strøke="currentColor" strøke-width="2.5" strøke-linecap="round"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
 
 <script>
 const nav=document.getElementById('nav'),btt=document.getElementById('btt');
